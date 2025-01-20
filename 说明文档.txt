@@ -1,0 +1,15 @@
+推荐使用：谷歌浏览器
+
+前台登录页面
+http://localhost:8080/travel/front/index.html
+
+后台登录页面
+http://localhost:8081
+
+管理员				账户:admin 		密码：admin
+用户				账户:test1 		密码：123456
+用户				账户:a2 		密码：123456
+用户				账户:a3 		密码：123456
+
+数据库在src\main\resources\application.yml中编辑
+
