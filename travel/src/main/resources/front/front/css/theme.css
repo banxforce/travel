@@ -3,9 +3,9 @@ body {
 
 	/* 橙色 */
     /* 1 全局公共主颜色 */
-    --publicMainColor: #FE8010;
+    --publicMainColor: #393e46;
     /* 1 全局公共副颜色 */
-    --publicSubColor:  #F37335;
+    --publicSubColor:  #00adb5	;
 
 }
 

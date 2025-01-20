@@ -1,8 +1,10 @@
 <template>
-  <el-breadcrumb class="app-breadcrumb" separator="(●'◡'●)" style="height:50px;backgroundColor:rgba(224, 240, 233, 1);borderRadius:0px;padding:0px 20px 0px 20px;boxShadow:4px 4px 2px#FFB3A7;borderWidth:0px;borderStyle:dotted solid double dashed;borderColor:rgba(174, 238, 238, 1);">
-    <transition-group name="breadcrumb" class="box" :style="2==1?'justifyContent:flex-start;':2==2?'justifyContent:center;':'justifyContent:flex-end;'">
-      <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
-        <span v-if="item.redirect==='noRedirect'||index==levelList.length-1" class="no-redirect">{{ item.name }}</span>
+  <el-breadcrumb class="app-breadcrumb" separator="(●'◡'●)"
+    style="height:50px;backgroundColor:rgba(224, 240, 233, 1);borderRadius:0px;padding:0px 20px 0px 20px;boxShadow:4px 4px 2px#00adb5;borderWidth:0px;borderStyle:dotted solid double dashed;borderColor:rgba(174, 238, 238, 1);">
+    <transition-group name="breadcrumb" class="box"
+      :style="2 == 1 ? 'justifyContent:flex-start;' : 2 == 2 ? 'justifyContent:center;' : 'justifyContent:flex-end;'">
+      <el-breadcrumb-item v-for="(item, index) in levelList" :key="item.path">
+        <span v-if="item.redirect === 'noRedirect' || index == levelList.length - 1" class="no-redirect">{{ item.name }}</span>
         <a v-else @click.prevent="handleLink(item)">{{ item.name }}</a>
       </el-breadcrumb-item>
     </transition-group>
@@ -60,23 +62,23 @@ export default {
       this.$router.push(path)
     },
     breadcrumbStyleChange(val) {
-      this.$nextTick(()=>{
-        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__separator').forEach(el=>{
+      this.$nextTick(() => {
+        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__separator').forEach(el => {
           el.innerText = "(●'◡'●)"
           el.style.color = "rgba(43, 115, 176, 1)"
         })
-        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner a').forEach(el=>{
+        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner a').forEach(el => {
           el.style.color = "rgba(77, 84, 222, 1)"
         })
-        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner .no-redirect').forEach(el=>{
+        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner .no-redirect').forEach(el => {
           el.style.color = "rgba(17, 18, 18, 1)"
         })
 
         let str = "vertical"
-        if("vertical" === str) {
+        if ("vertical" === str) {
           let headHeight = "60px"
           headHeight = parseInt(headHeight) + 10 + 'px'
-          document.querySelectorAll('.app-breadcrumb').forEach(el=>{
+          document.querySelectorAll('.app-breadcrumb').forEach(el => {
             el.style.marginTop = headHeight
           })
         }
