@@ -48,7 +48,7 @@
                             href="http://localhost:8080/travel/upload/lvyouluxianMuBan.xls">批量导入旅游路线数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('lvyouluxian', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="lvyouluxianUploadSuccess"
+                            action="travel/file/upload" :on-success="lvyouluxianUploadSuccess"
                             :on-error="lvyouluxianUploadError" :show-file-list=false>
                             <el-button v-if="isAuth('lvyouluxian', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入旅游路线数据</el-button>
@@ -119,8 +119,8 @@
                                 size="mini" @click="addOrUpdateHandler(scope.row.id, 'info')">详情</el-button>
                             <el-button v-if="isAuth('lvyouluxian', '修改')" type="primary" icon="el-icon-edit" size="mini"
                                 @click="addOrUpdateHandler(scope.row.id)">修改</el-button>
-                            <el-button v-if="isAuth('lvyouluxian', '删除')" type="danger" icon="el-icon-delete" size="mini"
-                                @click="deleteHandler(scope.row.id)">删除</el-button>
+                            <el-button v-if="isAuth('lvyouluxian', '删除')" type="danger" icon="el-icon-delete"
+                                size="mini" @click="deleteHandler(scope.row.id)">删除</el-button>
 
                         </template>
                     </el-table-column>

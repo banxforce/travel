@@ -48,7 +48,7 @@
                             href="http://localhost:8080/travel/upload/jingdianMuBan.xls">批量导入景点信息数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('jingdian', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="jingdianUploadSuccess"
+                            action="travel/file/upload" :on-success="jingdianUploadSuccess"
                             :on-error="jingdianUploadError" :show-file-list=false>
                             <el-button v-if="isAuth('jingdian', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入景点信息数据</el-button>

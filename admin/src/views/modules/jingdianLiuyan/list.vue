@@ -42,7 +42,7 @@
                             href="http://localhost:8080/travel/upload/jingdianLiuyanMuBan.xls">批量导入景点留言数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('jingdianLiuyan', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="jingdianLiuyanUploadSuccess"
+                            action="travel/file/upload" :on-success="jingdianLiuyanUploadSuccess"
                             :on-error="jingdianLiuyanUploadError" :show-file-list=false>
                             <el-button v-if="isAuth('jingdianLiuyan', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入景点留言数据</el-button>
@@ -86,7 +86,8 @@
                     <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
                         prop="jingdianLiuyanText" header-align="center" label="留言内容">
                         <template slot-scope="scope">
-                            <span v-if="scope.row.jingdianLiuyanText != null && scope.row.jingdianLiuyanText.length > 10">
+                            <span
+                                v-if="scope.row.jingdianLiuyanText != null && scope.row.jingdianLiuyanText.length > 10">
                                 {{ scope.row.jingdianLiuyanText.slice(0, 10) }}...
                             </span>
                             <span v-else>

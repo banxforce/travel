@@ -46,7 +46,8 @@
                 </el-table-column>
                 <el-table-column label="回复内容">
                     <template slot-scope="scope">
-                        {{ scope.row.forumContent.length > 20 ? (scope.row.forumContent.substring(0, 20) + '...') : scope.row.forumContent }}
+                        {{ scope.row.forumContent.length > 20 ? (scope.row.forumContent.substring(0, 20) + '...') :
+                        scope.row.forumContent }}
                     </template>
                 </el-table-column>
                 <el-table-column property="insertTime" label="回帖时间"></el-table-column>
@@ -108,8 +109,8 @@
                             href="http://localhost:8080/travel/upload/forumMuBan.xls">批量导入论坛数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('forum', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="forumUploadSuccess"
-                            :on-error="forumUploadError" :show-file-list=false>
+                            action="travel/file/upload" :on-success="forumUploadSuccess" :on-error="forumUploadError"
+                            :show-file-list=false>
                             <el-button v-if="isAuth('forum', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入论坛数据</el-button>
                         </el-upload>
@@ -192,7 +193,8 @@
                     <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="forumContent"
                         header-align="center" label="帖子内容">
                         <template slot-scope="scope">
-                            {{ scope.row.forumContent.length > 20 ? (scope.row.forumContent.substring(0, 20) + '...') : scope.row.forumContent }}
+                            {{ scope.row.forumContent.length > 20 ? (scope.row.forumContent.substring(0, 20) + '...') :
+                            scope.row.forumContent }}
                         </template>
                     </el-table-column>
                     <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign" prop="insertTime"

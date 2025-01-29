@@ -48,8 +48,8 @@
                             href="http://localhost:8080/travel/upload/newsMuBan.xls">批量导入公告信息数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('news', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="newsUploadSuccess"
-                            :on-error="newsUploadError" :show-file-list=false>
+                            action="travel/file/upload" :on-success="newsUploadSuccess" :on-error="newsUploadError"
+                            :show-file-list=false>
                             <el-button v-if="isAuth('news', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入公告信息数据</el-button>
                         </el-upload>

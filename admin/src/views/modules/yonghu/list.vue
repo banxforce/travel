@@ -37,8 +37,8 @@
                         <el-button v-if="isAuth('yonghu', '新增')" type="success" icon="el-icon-plus"
                             @click="addOrUpdateHandler()">新增</el-button>
                         &nbsp;
-                        <el-button v-if="isAuth('yonghu', '删除')" :disabled="dataListSelections.length <= 0" type="danger"
-                            icon="el-icon-delete" @click="deleteHandler()">删除</el-button>
+                        <el-button v-if="isAuth('yonghu', '删除')" :disabled="dataListSelections.length <= 0"
+                            type="danger" icon="el-icon-delete" @click="deleteHandler()">删除</el-button>
                         &nbsp;
                         <el-button v-if="isAuth('yonghu', '报表')" type="success" icon="el-icon-pie-chart"
                             @click="chartDialog()">报表</el-button>
@@ -48,8 +48,8 @@
                             href="http://localhost:8080/travel/upload/yonghuMuBan.xls">批量导入用户数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('yonghu', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="yonghuUploadSuccess"
-                            :on-error="yonghuUploadError" :show-file-list=false>
+                            action="travel/file/upload" :on-success="yonghuUploadSuccess" :on-error="yonghuUploadError"
+                            :show-file-list=false>
                             <el-button v-if="isAuth('yonghu', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入用户数据</el-button>
                         </el-upload>

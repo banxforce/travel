@@ -53,7 +53,7 @@
                             href="http://localhost:8080/travel/upload/lvyoudongtaiMuBan.xls">批量导入旅游动态数据模板</a>
                         &nbsp;
                         <el-upload v-if="isAuth('lvyoudongtai', '导入导出')" style="display: inline-block"
-                            action="lvyouwangzhan/file/upload" :on-success="lvyoudongtaiUploadSuccess"
+                            action="travel/file/upload" :on-success="lvyoudongtaiUploadSuccess"
                             :on-error="lvyoudongtaiUploadError" :show-file-list=false>
                             <el-button v-if="isAuth('lvyoudongtai', '导入导出')" type="success"
                                 icon="el-icon-upload2">批量导入旅游动态数据</el-button>
@@ -148,8 +148,8 @@
                         <template slot-scope="scope">
                             <el-button v-if="isAuth('lvyoudongtai', '查看')" type="success" icon="el-icon-tickets"
                                 size="mini" @click="addOrUpdateHandler(scope.row.id, 'info')">详情</el-button>
-                            <el-button v-if="isAuth('lvyoudongtai', '修改')" type="primary" icon="el-icon-edit" size="mini"
-                                @click="addOrUpdateHandler(scope.row.id)">修改</el-button>
+                            <el-button v-if="isAuth('lvyoudongtai', '修改')" type="primary" icon="el-icon-edit"
+                                size="mini" @click="addOrUpdateHandler(scope.row.id)">修改</el-button>
                             <el-button v-if="isAuth('lvyoudongtai', '删除')" type="danger" icon="el-icon-delete"
                                 size="mini" @click="deleteHandler(scope.row.id)">删除</el-button>
 
