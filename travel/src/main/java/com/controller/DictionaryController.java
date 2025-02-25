@@ -208,7 +208,7 @@ public class DictionaryController {
                 .orderDesc(descs);
         logger.info("sql语句:"+queryWrapper.getSqlSegment());
         List<DictionaryEntity> dictionaryEntityList = dictionaryService.selectList(queryWrapper);
-        if(dictionaryEntityList != null ){
+        if(!dictionaryEntityList.isEmpty()){
             return R.ok().put("maxCodeIndex",dictionaryEntityList.get(0).getCodeIndex()+1);
         }else{
             return R.ok().put("maxCodeIndex",1);

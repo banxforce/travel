@@ -593,6 +593,15 @@ export default {
                 if (data && data.code === 0) {
                     this.dataList = data.data.list;
                     this.totalPage = data.data.total;
+                    // 多张图片取第一张作为封面
+                    this.dataList.forEach(item => {
+                        if (item.jingdianPhoto) {  // 确保 photo 存在
+                            const commaIndex = item.jingdianPhoto.indexOf(',');
+                            if (commaIndex !== -1) {
+                                item.jingdianPhoto = item.jingdianPhoto.substring(0, commaIndex);  // 有逗号时取逗号前部分
+                            }
+                        }
+                    })
                 } else {
                     this.dataList = [];
                     this.totalPage = 0;
